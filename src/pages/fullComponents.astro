@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import MainLayout from "src/layouts/mainLayout.astro";
+import GridLayout from "src/layouts/gridLayout.astro";
+import Titulo from "@components/titulos.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Components</title>
+  </head>
+  <body>
+    <MainLayout>
+      <Titulo text="Bienvenidos a mi sitio web" />
+      <GridLayout><h1 class="text-red-50">"safsadsfdsfdsad"</h1></GridLayout>
+    </MainLayout>
+  </body>
+</html>
