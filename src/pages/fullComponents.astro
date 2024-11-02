@@ -3,6 +3,7 @@ import "../styles/global.css";
 import MainLayout from "src/layouts/mainLayout.astro";
 import GridLayout from "src/layouts/gridLayout.astro";
 import Titulo from "@components/titulos.astro";
+import Notification1 from "@components/notifications1.astro";
 ---
 
 <!doctype html>
@@ -14,8 +15,30 @@ import Titulo from "@components/titulos.astro";
   </head>
   <body>
     <MainLayout>
-      <Titulo text="Bienvenidos a mi sitio web" />
-      <GridLayout><h1 class="text-red-50">"safsadsfdsfdsad"</h1></GridLayout>
+      <Titulo text="Notifications 1" />
+      <GridLayout>
+        <Notification1 />
+        <Notification1
+          text="Su pedido esta listo!"
+          message="Llegara en 15min."
+          extraClass="flex-row-reverse"
+          icon="public/icons/food-color-beer-95-svgrepo-com.svg"
+        />
+        <Notification1
+          text="Preparando tu pedido!"
+          message="Estara listo en 20min"
+          extraClass="flex-col"
+          extraClassText="items-center"
+          icon="public/icons/steak-meat-svgrepo-com.svg"
+        />
+        <Notification1
+          text="tu pedido esta casi listo!"
+          message="Prepara tu estomago!"
+          extraClass="flex-col-reverse "
+          extraClassText="items-center"
+          icon="public/icons/steak-svgrepo-com.svg"
+        />
+      </GridLayout>
     </MainLayout>
   </body>
 </html>
