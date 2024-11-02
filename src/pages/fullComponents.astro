@@ -4,6 +4,7 @@ import MainLayout from "src/layouts/mainLayout.astro";
 import GridLayout from "src/layouts/gridLayout.astro";
 import Titulo from "@components/titulos.astro";
 import Notification1 from "@components/notifications1.astro";
+import Notification2 from "@components/notifications2.astro";
 ---
 
 <!doctype html>
@@ -37,6 +38,30 @@ import Notification1 from "@components/notifications1.astro";
           extraClass="flex-col-reverse "
           extraClassText="items-center"
           icon="public/icons/steak-svgrepo-com.svg"
+        />
+      </GridLayout>
+      <Titulo text="Notifications 2" />
+      <GridLayout>
+        <Notification2
+          name="Steak House"
+          title="Full Stack Developer"
+          image="/public/images/5623795.jpg"
+          extraClass=""
+          btnTxt="Portafolio"
+        />
+        <Notification2
+          name="Daniel Andrade"
+          title="Full Stack Developer"
+          image="/public/images/5623795.jpg"
+          extraClass="flex-col"
+          btnTxt="Portafolio"
+        />
+        <Notification2
+          name="Daniel Andrade"
+          title="Full Stack Developer"
+          image="/public/images/5623795.jpg"
+          extraClass=""
+          btnTxt="Portafolio"
         />
       </GridLayout>
     </MainLayout>
