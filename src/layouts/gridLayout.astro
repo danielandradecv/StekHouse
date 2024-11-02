@@ -1,10 +1,9 @@
 ---
-// GridLayout.astro
 const { children } = Astro.props;
 ---
 
 <div
-  class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4 auto-rows-auto items-start"
+  class="gap-4 flex flex-wrap justify-center mx-auto items-center p-4 resize-x border border-gray-300 rounded-lg overflow-auto bg-white bg-opacity-10 min-w-[280px] min-h-[200px] max-w-full"
 >
   {children}
   <slot />

@@ -5,7 +5,6 @@ import GridLayout from "src/layouts/gridLayout.astro";
 import Titulo from "@components/titulos.astro";
 import Notification1 from "@components/notifications1.astro";
 import Notification2 from "@components/notifications2.astro";
-import ResponsiveContainer from "@components/ResponsiveContainer.astro";
 ---
 
 <!doctype html>
@@ -37,7 +36,7 @@ import ResponsiveContainer from "@components/ResponsiveContainer.astro";
           text="tu pedido esta casi listo!"
           message="Prepara tu estomago!"
           extraClass="flex-col-reverse "
-          extraClassText="items-center"
+          extraClassText="items-center justify-cente"
           icon="icons/steak-svgrepo-com.svg"
         />
       </GridLayout>
@@ -74,16 +73,6 @@ import ResponsiveContainer from "@components/ResponsiveContainer.astro";
           extraTitleClass="text-center"
         />
       </GridLayout>
-      <ResponsiveContainer>
-        <Notification2
-          name="Steak House"
-          title="Tenemos los mejores cortes!"
-          image="/images/5623795.jpg"
-          extraClass="flex-col-reverse bg-black"
-          btnTxt="Menu"
-          extraTitleClass="text-center"
-        />
-      </ResponsiveContainer>
     </MainLayout>
   </body>
 </html>
