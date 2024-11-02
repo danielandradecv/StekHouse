@@ -1,0 +1,30 @@
+---
+const { children } = Astro.props;
+---
+
+<div
+  class="resize-container border border-gray-300 rounded-lg overflow-auto mx-auto my-4 bg-gray-100"
+>
+  <div class="viewport p-4">
+    {children}
+    <slot />
+  </div>
+</div>
+
+<style>
+  .resize-container {
+    /* Habilitar ajuste de tamaño horizontal */
+    resize: horizontal;
+    overflow: auto;
+    max-width: 100%;
+    min-width: 320px;
+    min-height: 200px;
+  }
+  .viewport {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

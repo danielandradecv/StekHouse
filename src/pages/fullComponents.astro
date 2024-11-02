@@ -5,6 +5,7 @@ import GridLayout from "src/layouts/gridLayout.astro";
 import Titulo from "@components/titulos.astro";
 import Notification1 from "@components/notifications1.astro";
 import Notification2 from "@components/notifications2.astro";
+import ResponsiveContainer from "@components/ResponsiveContainer.astro";
 ---
 
 <!doctype html>
@@ -23,21 +24,21 @@ import Notification2 from "@components/notifications2.astro";
           text="Su pedido esta listo!"
           message="Llegara en 15min."
           extraClass="flex-row-reverse"
-          icon="public/icons/food-color-beer-95-svgrepo-com.svg"
+          icon="icons/food-color-beer-95-svgrepo-com.svg"
         />
         <Notification1
           text="Preparando tu pedido!"
           message="Estara listo en 20min"
           extraClass="flex-col"
           extraClassText="items-center"
-          icon="public/icons/steak-meat-svgrepo-com.svg"
+          icon="icons/steak-meat-svgrepo-com.svg"
         />
         <Notification1
           text="tu pedido esta casi listo!"
           message="Prepara tu estomago!"
           extraClass="flex-col-reverse "
           extraClassText="items-center"
-          icon="public/icons/steak-svgrepo-com.svg"
+          icon="icons/steak-svgrepo-com.svg"
         />
       </GridLayout>
       <Titulo text="Notifications 2" />
@@ -45,25 +46,44 @@ import Notification2 from "@components/notifications2.astro";
         <Notification2
           name="Steak House"
           title="Full Stack Developer"
-          image="/public/images/5623795.jpg"
+          image="/images/5623795.jpg"
           extraClass=""
           btnTxt="Portafolio"
         />
         <Notification2
           name="Daniel Andrade"
           title="Full Stack Developer"
-          image="/public/images/5623795.jpg"
-          extraClass="flex-col"
+          image="/images/avatar3.png"
+          extraClass="flex-row-reverse"
           btnTxt="Portafolio"
         />
         <Notification2
-          name="Daniel Andrade"
-          title="Full Stack Developer"
-          image="/public/images/5623795.jpg"
-          extraClass=""
-          btnTxt="Portafolio"
+          name="Steak House"
+          title="Mira nuestro menu de steaks"
+          image="/images/Sin-título-1.jpg"
+          extraClass="flex-col "
+          btnTxt="Menu"
+          extraTitleClass="text-center"
+        />
+        <Notification2
+          name="Steak House"
+          title="Tenemos los mejores cortes!"
+          image="/images/5623795.jpg"
+          extraClass="flex-col-reverse"
+          btnTxt="Menu"
+          extraTitleClass="text-center"
         />
       </GridLayout>
+      <ResponsiveContainer>
+        <Notification2
+          name="Steak House"
+          title="Tenemos los mejores cortes!"
+          image="/images/5623795.jpg"
+          extraClass="flex-col-reverse bg-black"
+          btnTxt="Menu"
+          extraTitleClass="text-center"
+        />
+      </ResponsiveContainer>
     </MainLayout>
   </body>
 </html>
