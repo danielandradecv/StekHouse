@@ -1,10 +1,6 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
-
-
 export default defineConfig({
-  // Aquí puedes añadir configuraciones adicionales para Astro si las necesitas.
+  output: 'static',
+  base: '', // Cambia "<nombre-del-repo>" por el nombre de tu repositorio
 });
-
-

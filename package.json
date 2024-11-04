@@ -107,8 +107,10 @@
     "yaml": "^2.6.0"
   },
   "scripts": {
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
-    
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "keywords": [],
   "author": "",

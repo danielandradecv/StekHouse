@@ -5,6 +5,8 @@ import GridLayout from "src/layouts/gridLayout.astro";
 import Titulo from "@components/titulos.astro";
 import Notification1 from "@components/notifications1.astro";
 import Notification2 from "@components/notifications2.astro";
+import CanvaLayout from "src/layouts/CanvaResponsive.astro";
+import CodeCard from "@components/CodeCard.astro";
 ---
 
 <!doctype html>
@@ -33,7 +35,7 @@ import Notification2 from "@components/notifications2.astro";
           icon="icons/steak-meat-svgrepo-com.svg"
         />
         <Notification1
-          text="tu pedido esta casi listo!"
+          text="tu pedido esta listo!"
           message="Prepara tu estomago!"
           extraClass="flex-col-reverse "
           extraClassText="items-center justify-cente"
@@ -73,6 +75,7 @@ import Notification2 from "@components/notifications2.astro";
           extraTitleClass="text-center"
         />
       </GridLayout>
+      <CodeCard />
     </MainLayout>
   </body>
 </html>
