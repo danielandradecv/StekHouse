@@ -1,0 +1,61 @@
+---
+//  Shiki libreria js para estilos del codigo
+import { getHighlighter } from "shiki";
+
+// Anadir text para reutilizar el texto
+const {
+  title = "hola mundo",
+  text = `
+  <div class="relative rounded-lg bg-slate-900 p-2">
+  <div class="relative flex text-center">
+    <div class="flex pl-3.5 pt-3">
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="-ml-0.5 mr-1.5 h-3 w-3 text-red-500/20"
+      >`,
+  lang = "astro",
+  theme = "houston",
+} = Astro.props;
+
+// Configuracion del resaltado de sintaxis del texto
+const highlighter = await getHighlighter({
+  themes: [theme], // el tema
+  langs: [lang], // lenguajes
+});
+
+// aqui se genera el texto ya con su estilo
+const highlightedCode = highlighter.codeToHtml(text, { lang, theme });
+---
+
+<div class="min-w-0 max-w-[600px]">
+  <div class="rounded-xl bg-[#17191e] mx-auto">
+    <div class="relative flex text-center">
+      <div class="flex pl-3.5 py-3">
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="-ml-0.5 mr-1.5 h-3 w-3 text-red-600"
+        >
+          <circle r="12" cy="12" cx="12"></circle>
+        </svg><svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="-ml-0.75 mr-1.5 h-3 w-3 text-yellow-400"
+        >
+          <circle r="12" cy="12" cx="12"></circle>
+        </svg><svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="-ml-0.75 mr-1.5 h-3 w-3 text-green-600"
+        >
+          <circle r="12" cy="12" cx="12"></circle>
+        </svg>
+      </div><span class="absolute inset-x-0 top-2 text-white font-bold"
+        >{title}</span
+      >
+    </div>
+
+    <div class="m-2 overflow-auto" set:html={highlightedCode} />
+  </div>
+</div>

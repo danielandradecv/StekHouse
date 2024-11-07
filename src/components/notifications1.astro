@@ -15,7 +15,7 @@ const {
     <img class="w-12 h-12" src={icon} alt="Icono" />
   </div>
   <div class={`flex flex-col ${extraClassText}`}>
-    <div class="text-xl font-medium text-black">{text}</div>
+    <div class="text-xl font-medium text-black">{text}{Astro.props.prueba}</div>
     <p class="text-slate-500 mb-2">{message}</p>
   </div>
 </div>

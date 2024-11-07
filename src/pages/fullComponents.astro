@@ -5,8 +5,8 @@ import GridLayout from "src/layouts/gridLayout.astro";
 import Titulo from "@components/titulos.astro";
 import Notification1 from "@components/notifications1.astro";
 import Notification2 from "@components/notifications2.astro";
-import CanvaLayout from "src/layouts/CanvaResponsive.astro";
 import CodeCard from "@components/CodeCard.astro";
+import CardText from "@components/CardText.astro";
 ---
 
 <!doctype html>
@@ -19,7 +19,58 @@ import CodeCard from "@components/CodeCard.astro";
   <body>
     <MainLayout>
       <Titulo text="Notifications 1" />
-      <GridLayout>
+      <CardText
+        titulo="componentes reutilizables y optimizados"
+        texto="Los ejemplos de notificación 1 y varios componentes comparten una misma estructura de código, lo que permite reutilizar el diseño, estilos, texto e íconos de forma eficiente. Gracias a los componentes de Astro y Tailwind, es posible personalizar tanto la información como los estilos de cada notificación mediante el uso de props, logrando así una implementación versátil y adaptable con un único código base. Por ejemplo, en notificación 1, el primer contenedor es el diseño original, mientras que los otros tres comparten el mismo código pero presentan estilos diferentes."
+      />
+
+      <GridLayout extraClass="items-start">
+        <CodeCard
+          title="Componente Notification1.astro"
+          text=` 
+      ---
+const {
+text = "Título!",
+message = "Mensaje predeterminado",
+icon = "/icons/hamburger-svgrepo-com.svg",
+extraClass = "",
+extraClassText = "",} = Astro.props;
+      
+---
+      
+<div
+class={'p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg 
+flex items-center gap-x-4 ${'extraClass'}'}
+>
+  <div class="shrink-0">
+    <img class="w-12 h-12" src={icon} alt="Icono" />
+  </div>
+  <div class={'flex flex-col ${'extraClassText'}'}>
+    <div class="text-xl font-medium text-black">{text}</div>
+    <p class="text-slate-500 mb-2">{message}</p>
+  </div>
+</div>
+`
+        />
+
+        <CodeCard
+          title="index.astro"
+          text=`---
+import Layout from "@Layouts/Layout.astro"
+import Notification1 from "@components/Notifications1.astro";
+---
+<Layout>     
+  <Notification1
+    text="Su pedido esta listo!"
+    message="Llegara en 15min."
+    extraClass="flex-row-reverse"
+    icon="icons/food-color-beer-95-svgrepo-com.svg"
+    />
+</Layout>   
+      `
+        />
+      </GridLayout>
+      <GridLayout extraClass="items-center">
         <Notification1 />
         <Notification1
           text="Su pedido esta listo!"
@@ -43,14 +94,8 @@ import CodeCard from "@components/CodeCard.astro";
         />
       </GridLayout>
       <Titulo text="Notifications 2" />
-      <GridLayout>
-        <Notification2
-          name="Steak House"
-          title="Full Stack Developer"
-          image="/images/5623795.jpg"
-          extraClass=""
-          btnTxt="Portafolio"
-        />
+      <GridLayout extraClass="items-center">
+        <Notification2 />
         <Notification2
           name="Daniel Andrade"
           title="Full Stack Developer"
@@ -75,7 +120,6 @@ import CodeCard from "@components/CodeCard.astro";
           extraTitleClass="text-center"
         />
       </GridLayout>
-      <CodeCard />
     </MainLayout>
   </body>
 </html>
