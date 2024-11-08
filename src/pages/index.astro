@@ -1,6 +1,13 @@
 ---
 import "../styles/global.css";
 import MainLayout from "src/layouts/mainLayout.astro";
+import HeroHeader from "@components/Heroheader.astro";
+import Subrayado from "@components/Subrayado.astro";
+import CategoryCard from "@components/CategoryCard.astro";
+import GridSpace from "@components/GridSpace.astro";
+import GridLayout from "../layouts/gridLayout.astro";
+import CardHamburgerGrid from "@components/CardHamburgerGrid.astro";
+import CardText from "@components/CardText.astro";
 ---
 
 <!doctype html>
@@ -11,6 +18,35 @@ import MainLayout from "src/layouts/mainLayout.astro";
     <title>Inicio</title>
   </head>
   <body>
-    <MainLayout />
+    <MainLayout>
+      <HeroHeader />
+      <Subrayado />
+      <GridLayout>
+        <CategoryCard title="STEAKS" />
+        <CategoryCard title="HAMBURGER" link="/images/Capa 7.png" />
+        <CategoryCard title="CHICKEN WINGS" link="/images/Capa 14.png" />
+        <CategoryCard title="SKEWERS" link="/images/pngegg.png" />
+      </GridLayout>
+      <GridSpace>
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+        <CardHamburgerGrid />
+      </GridSpace>
+      <div class="w-4 mt-7"></div>
+      <CardText
+        titulo="componentes reutilizables y optimizados"
+        texto="Los ejemplos de notificación 1 y varios componentes comparten una misma estructura de código, lo que permite reutilizar el diseño, estilos, texto e íconos de forma eficiente. Gracias a los componentes de Astro y Tailwind, es posible personalizar tanto la información como los estilos de cada notificación mediante el uso de props, logrando así una implementación versátil y adaptable con un único código base. Por ejemplo, en notificación 1, el primer contenedor es el diseño original, mientras que los otros tres comparten el mismo código pero presentan estilos diferentes."
+      />
+      <div class="h-[200px] mt-7"></div>
+    </MainLayout>
   </body>
 </html>
