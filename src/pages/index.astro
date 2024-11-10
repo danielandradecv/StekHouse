@@ -8,6 +8,7 @@ import GridSpace from "@components/GridSpace.astro";
 import GridLayout from "../layouts/gridLayout.astro";
 import CardHamburgerGrid from "@components/CardHamburgerGrid.astro";
 import CardText from "@components/CardText.astro";
+import Section1 from "@components/Section1.astro";
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@ import CardText from "@components/CardText.astro";
         <CategoryCard title="CHICKEN WINGS" link="/images/Capa 14.png" />
         <CategoryCard title="SKEWERS" link="/images/pngegg.png" />
       </GridLayout>
+      <Section1 />
       <GridSpace>
         <CardHamburgerGrid />
         <CardHamburgerGrid />
@@ -36,12 +38,7 @@ import CardText from "@components/CardText.astro";
         <CardHamburgerGrid />
         <CardHamburgerGrid />
         <CardHamburgerGrid />
-        <CardHamburgerGrid />
-        <CardHamburgerGrid />
-        <CardHamburgerGrid />
-        <CardHamburgerGrid />
       </GridSpace>
-      <div class="w-4 mt-7"></div>
       <CardText
         titulo="componentes reutilizables y optimizados"
         texto="Los ejemplos de notificación 1 y varios componentes comparten una misma estructura de código, lo que permite reutilizar el diseño, estilos, texto e íconos de forma eficiente. Gracias a los componentes de Astro y Tailwind, es posible personalizar tanto la información como los estilos de cada notificación mediante el uso de props, logrando así una implementación versátil y adaptable con un único código base. Por ejemplo, en notificación 1, el primer contenedor es el diseño original, mientras que los otros tres comparten el mismo código pero presentan estilos diferentes."
