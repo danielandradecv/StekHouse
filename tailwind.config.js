@@ -7,6 +7,14 @@ module.exports = {
       serif: ['Merriweather', 'serif'],
     },
     extend: {
+      screens: {
+        xs: '440px',  // Tamaño personalizado para xs
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
       borderRadius: {
         '4xl': '2rem',
       },
